@@ -25,11 +25,11 @@ export default class PlaywrightFeignClientConfigurer implements FeignClientConfi
         const singer = ApiRequestSinger.sha256WithRsa({
             accessId: "example",
             secretKey: config.rsaPrivateKey
-        }, {headerPrefix: "Capte", debug: true});
+        }, {headerPrefix: "Wind", debug: true});
         const httpClient = new DefaultHttpClient(this.httpAdapter, [
             new TraceClientHttpRequestInterceptor(),
             // TODO 替换域名
-            new RoutingClientHttpRequestInterceptor("https://api.example.com/"),
+            new RoutingClientHttpRequestInterceptor(config.viewBaseUrl),
             new ApiSignatureRequestInterceptor(singer)
         ], HttpMediaType.APPLICATION_JSON);
         return {
