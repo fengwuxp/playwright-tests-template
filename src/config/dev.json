@@ -1,0 +1,9 @@
+{
+  "rsaPrivateKey": "xx",
+  "testUser": {
+    "userName": "example",
+    "password": "example"
+  },
+  "viewBaseUrl": "https://view.exmaple.com",
+  "apiBaseUrl": "https://api.exmaple.com"
+}
